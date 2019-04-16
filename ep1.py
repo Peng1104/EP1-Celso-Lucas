@@ -68,9 +68,8 @@ def main():
             game_over = True
         else:
 
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
-            escolha = ""
+           
+            escolha = input("Nome de Usuario: ")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
