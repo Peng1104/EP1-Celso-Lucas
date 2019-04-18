@@ -24,37 +24,76 @@ def Cenarios():
         with open("Cenarios.json",'r') as file:
             return json.loads(file.read())
     else:
-        data = []
-        
-        data.append("{")
-        data.append("\t\"Inicio\": {")
-        data.append("\t\t\"Titulo\": \"Saguão do perigo\",")
-        data.append("\t\t\"Descrição\": \"Você está no saguão de entrada do Insper\",")
-        data.append("\t\t\"Opções\": {")
-        data.append("\t\t\t\"Andar do Professor\": \"Pegar o elevador para ir ao andar do professor\",")
-        data.append("\t\t\t\"Biblioteca\": \"Ir para a biblioteca\"")
-        data.append("\t\t}")
-        data.append("\t}, \"Andar do Professor\": {")
-        data.append("\t\t\"Titulo\": \"Andar do desespero\",")
-        data.append("\t\t\"Descrição\": \"Você chegou no andar da sala do seu professor\",")
-        data.append("\t\t\"Opções\": {")
-        data.append("\t\t\t\"Inicio\": \"Tomar o elevador para voltar ao saguão de entrada\",")
-        data.append("\t\t\t\"Professor\": \"Ir falar com o professor\"")
-        data.append("\t\t}")
-        data.append("\t}, \"Professor\": {")
-        data.append("\t\t\"Titulo\": \"O monstro do Python\",")
-        data.append("\t\t\"Descrição\": \"Você foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e devorou sua alma.\",")
-        data.append("\t\t\"Opções\": {}")
-        data.append("\t}, \"Biblioteca\": {")
-        data.append("\t\t\"Titulo\": \"Caverna da tranquilidade\",")
-        data.append("\t\t\"Descrição\": \"Você está na biblioteca\",")
-        data.append("\t\t\"Opções\": {")
-        data.append("\t\t\t\"Inicio\": \"Voltar para o saguão de entrada\"")
-        data.append("\t\t}")
-        data.append("\t}")
-        data.append("}")
-        
-        ListToFile("Cenarios.json", data)
+        cenarios = {
+                "Inicio": {
+                        "Titulo": "Saguão do perigo",
+                        "Descrição": "Você está no saguão de entrada do Insper",
+                        "Opções": {
+                                "Andar do Professor": "Pegar o elevador para ir ao andar do professor",
+                                "Biblioteca": "Ir para a biblioteca",
+                                "Predio Novo": "Ir para a entrada do prédio novo"
+                        }
+                },
+                "Andar do Professor": {
+                        "Titulo": "Andar do desespero",
+                        "Descrição": "Você chegou no andar da sala do seu professor",
+                        "Opções": {
+                                "Inicio": "Tomar o elevador para voltar ao saguão de entrada",
+                                "Professor": "Ir falar com o professor"
+                        }
+                },
+                "Professor": {
+                        "Titulo": "O monstro do Python",
+                        "Descrição": "Você foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e devorou sua alma.",
+                        "Opções": {}
+                },
+                "Biblioteca": {
+                        "Titulo": "Caverna da tranquilidade",
+                        "Descrição": "Você está na biblioteca",
+                        "Opções": {
+                                "Inicio": "Voltar para o saguão de entrada"
+                        }
+                },
+                "Predio Novo": {
+                        "Titulo": "Prédio Novo",
+                        "Descrição": "Você crusou a rua e entrou no prédio novo",
+                        "Opções": {
+                                "Inicio": "Voltar para o saguão de entrada do Insper",
+                                "Primeiro Andar": "Subir de escada para o primeiro andar",
+                                "Segundo Andar": "Pegar o elevador para o segundo andar",
+                                "Terceiro Andar": "Pegar o elevador para o terceiro andar"
+                        }
+                },
+                "Primeiro Andar": {
+                        "Titulo": "Primeiro Andar",
+                        "Descrição": "Você chegou no primeiro andar do prédio novo",
+                        "Opções": {
+                                "Predio Novo": "Voltar para a entrada do prédio novo decendo as escadas",
+                                "Segundo Andar": "Subir de escada para o segundo andar",
+                                "Terceiro Andar": "Pegar o elevador para o terceiro andar"
+                        }
+                },
+                "Segundo Andar": {
+                        "Titulo": "Segundo Andar",
+                        "Descrição": "Você chegou no segundo andar do prédio novo",
+                        "Opções": {
+                                "Predio Novo": "Voltar para a entrada do prédio novo atravez do escorregador",
+                                "Primeiro Andar": "Descer de escada para o primeiro andar",
+                                "Terceiro Andar": "Subir de escada para o terceiro andar"
+                        }
+                },
+                "Terceiro Andar": {
+                        "Titulo": "Terceiro Andar",
+                        "Descrição": "Você chegou no terceiro andar do prédio novo",
+                        "Opções": {
+                                "Predio Novo": "Voltar para a entrada do prédio novo decendo de elevador",
+                                "Primeiro Andar": "Pegar o elevador para o primeiro andar",
+                                "Segundo Andar": "Descer de escada para o segundo andar"
+                        }
+                }
+        }
+        with open("Cenarios.json", 'w') as file:
+            file.write(json.dumps(cenarios, ensure_ascii=False, indent="\t"))
         
         return Cenarios()
 
