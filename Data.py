@@ -1,7 +1,10 @@
 # EP 2019-1: Pega os dados dos arquivos para o jogo
 
 import json
+import re
 from pathlib import Path
+
+teleportchance = -1
 
 def FileExists(filepath):
     if type(filepath) != str:
@@ -88,8 +91,16 @@ def Cenarios():
                         "Opções": {
                                 "Predio Novo": "Voltar para a entrada do prédio novo decendo de elevador",
                                 "Primeiro Andar": "Pegar o elevador para o primeiro andar",
-                                "Segundo Andar": "Descer de escada para o segundo andar"
+                                "Segundo Andar": "Descer de escada para o segundo andar",
+                                "Fab Lap": "Ir para o Fab Lap"
                         }
+                },
+                "Fab Lap": {
+                		"Titulo": "Fab Lap",
+                		"Descrição": "Você entrou no Fab Lap",
+                		"Opções": {
+                			"Terceiro Andar": "Voltar para o terceiro andar"
+                		}
                 }
         }
         with open("Cenarios.json", 'w') as file:
@@ -115,3 +126,45 @@ def Introdução():
         ListToFile("Introdução.txt", data)
         
         return Introdução()
+
+def getTeleportText():
+    if FileExists("Teleporte.txt"):
+        with open("Teleporte.txt",'r') as file:
+            return file.readlines()
+    else:
+        data = []
+        
+        data.append("------------------")
+        data.append("Ops... você acabou de entrar num portal...")
+        data.append("Onde estou??")
+        data.append("------------------")
+        
+        ListToFile("Teleporte.txt", data)
+        
+        return getTeleportText()
+
+def getTeleportChance():
+    global teleportchance
+    if teleportchance != -1:
+        return teleportchance
+    elif FileExists("Config.txt"):
+        with open("Config.txt",'r') as file:
+            data = file.readlines()
+            
+        for i in range(len(data)):
+            if data[i].startswith("Chance de Teleporte: "):
+                if re.search("^1|0(.\d{1,2})?$", data[i].split()[3]):
+                    teleportchance = float(data[i].split()[3])
+                    return getTeleportChance()
+                else:
+                    data[i] = "Chance de Teleporte: 0.05"
+                    with open("Config.txt", 'w') as file:
+                        for e in data:
+                            file.write(e + "\n")
+                    teleportchance = 0.05
+                    return getTeleportChance()
+    else:
+        with open("Config.txt", 'a') as file:
+            file.write("Chance de Teleporte: 0.05")
+            teleportchance = 0.05
+            return getTeleportChance()
