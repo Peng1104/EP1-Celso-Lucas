@@ -11,25 +11,28 @@ class YamlFile:
 	#FilePath = Localização do arquivo yaml
 
 	def __init__(self, FilePath):
+		#Verefica a versâo do PyYAML se é igual ou superior a 5.1
+		if float(yaml.__version__) < 5.1:
+			raise ImportError("ERRO! Não Foi possível achar o modulo PyYAML 5.1 ou superior")
 		#Verefica se FilePath é uma string
-		if type(FilePath) != str:
-			raise Exception("ERRO! FilePath deve ser uma String")
+		elif type(FilePath) != str:
+			raise TypeError("ERRO! FilePath deve ser uma String")
 		#Verefica se existe o caminho especificado pelo FilePath
 		elif Path(FilePath).exists():
 			#Verefica se o caminho leva a um arquivo
 			if Path(FilePath).is_file():
 				#Verefica as permissões de Leitura e Escrita do arquivo
 				if not os.access(FilePath, os.R_OK):
-					raise Exception("ERRO! Não foi possível ler o arquivo: " + FilePath)
+					raise PermissionError("ERRO! Não foi possível ler o arquivo: " + FilePath)
 				elif not os.access(FilePath, os.W_OK):
-					raise Exception("ERRO! Não é possivel editar o arquivo: " + FilePath)
+					raise PermissionError("ERRO! Não é possivel editar o arquivo: " + FilePath)
 				else:
 					#Carrega as configurações inicias
 					self.FilePath = FilePath
 					self.data = {}
 					self.load()
 			else:
-				raise Exception("ERRO! " + FilePath + " é um diretório")
+				raise IsADirectoryError("ERRO! " + FilePath + " é um diretório")
 		else:
 			#Cria as configurações inicias
 			self.FilePath = FilePath
@@ -62,6 +65,8 @@ class YamlFile:
 				dic[tree[0]] = new
 
 			return dic
+		else:
+			raise TypeError("Tipo de tree e/ou value incorreto!")
 
 	#Processa o _set_ - USO INTERNO
 	def process_set(self, tree, dic, value):
@@ -92,6 +97,8 @@ class YamlFile:
 				else:
 					dic[tree[0]] = self.createNew(tree[1:], value)
 			return dic
+		else:
+			raise TypeError("Tipo de tree e/ou value e/ou dic incorreto!")
 
 	#Seta/Altera valores na configuração
 	def _set_(self, path, value):
@@ -109,6 +116,8 @@ class YamlFile:
 				self.load()
 			else:
 				self.data = self.process_set(tree, self.data, "{}".format(value))
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere")
 
 	#Processa o get - USO INTERNO
 	def process_get(self, tree, dic, default_value):
@@ -128,12 +137,16 @@ class YamlFile:
 			elif default_value != None:
 				self.process_set(tree, dic, default_value)
 				return default_value
+		else:
+			raise TypeError("Tipo de tree e/ou default_value e/ou dic incorreto!")
 
 	#Pega uma String dentro dos dados
 	def getString(self, path, default_value=None):
 		if type(path) == str and len(path) != 0 and (type(default_value) == str or default_value == None):
 			tree = path.split(".")
 			return "{}".format(self.process_get(tree, self.data, default_value))
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma String!")
 
 	#Pega um Float dentro dos dados
 	def getFloat(self, path, default_value=None):
@@ -153,6 +166,8 @@ class YamlFile:
 			elif default_value != None:
 				self._set_(path, default_value)
 				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser um Float!")
 
 	#Pega um Inteirno dentro dos dados
 	def getInt(self, path, default_value=None):
@@ -172,6 +187,8 @@ class YamlFile:
 			elif default_value != None:
 				self._set_(path, default_value)
 				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser um Inteiro!")
 
 	#Pega um Booleano dentro dos dados
 	def getBoolean(self, path, default_value=None):
@@ -185,6 +202,8 @@ class YamlFile:
 				string = self.getString(path, None)
 
 			return string.lower() == "true"
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser um Booleano!")
 
 	#Pega uma Lista dentro dos dados
 	def getList(self, path, default_value=None):
@@ -198,6 +217,8 @@ class YamlFile:
 			elif default_value != None:
 				self._set_(path, default_value)
 				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma Lista!")
 
 	#Pega um Dicionario dentro dos dados
 	def getDic(self, path, default_value=None):
@@ -211,3 +232,5 @@ class YamlFile:
 			elif default_value != None:
 				self._set_(path, default_value)
 				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser um Dicionario!")
