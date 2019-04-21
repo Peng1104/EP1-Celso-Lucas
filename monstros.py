@@ -16,3 +16,33 @@ sala = input('Sala: ')
 monstro = input('Monstro: ')
 
 print(M[sala][monstro])
+
+
+#-------------------------------------------- Funcao
+
+
+def insper_monster(a,b):
+
+	M = {
+
+	#'nome da sala': { 'monstro 1' : 'poder monstro 1' , 'monstro 2' : 'poder monstro 2' , 'monstro 3' : 'poder monstro 3' , 'monstro 4' : 'poder monstro 4' , 'monstro 5' : 'poder monstro 5' },
+
+	    'S1': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+	    'S2': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+	    'S3': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+	    'S3': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+	    'S4': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+	}
+
+
+#	sala = input('Sala: ')
+#	monstro = input('Monstro: ')
+
+	#return M[sala][monstro]
+	return M[a][b]
+
+	
+sala = input('Sala: ')
+monstro = input('Monstro: ')
+
+print(insper_monster(sala, monstro))
