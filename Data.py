@@ -3,6 +3,12 @@
 import json
 import re
 from pathlib import Path
+#----------------------------- funcao e arquivo (A decidir)
+#import monstros
+#import insper_monster
+#-----------------------------
+
+
 
 teleportchance = -1
 
@@ -96,11 +102,11 @@ def Cenarios():
                         }
                 },
                 "Fab Lap": {
-                		"Titulo": "Fab Lap",
-                		"Descrição": "Você entrou no Fab Lap",
-                		"Opções": {
-                			"Terceiro Andar": "Voltar para o terceiro andar"
-                		}
+                        "Titulo": "Fab Lap",
+                        "Descrição": "Você entrou no Fab Lap",
+                        "Opções": {
+                            "Terceiro Andar": "Voltar para o terceiro andar"
+                        }
                 }
         }
         with open("Cenarios.json", 'w') as file:
