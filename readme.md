@@ -1,7 +1,7 @@
-Exercício Programa - 2019/1 - Design de Software
+EP 2019-1: Insper Run
 ------------------------------------------------
 
 Alunos: 
-- Lucas Hix, lucash@insper.edu.br
-- Celso Diniz, celsohad@insper.edu.br
-- henriquefeola, henriquegf1@al.insper.edu.br
+- Lucas Hix, lucash@al.insper.edu.br
+- Celso Diniz, celsohad@al.insper.edu.br
+- Henrique Feola, henriquegf1@al.insper.edu.br

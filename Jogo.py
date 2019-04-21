@@ -1,23 +1,27 @@
-# EP 2019-1: Escape Insper
+# EP 2019-1: Insper Run
 #
 # Alunos: 
-# - aluno A: Lucas Hix, lucash@insper.edu.br
-# - aluno B: Celso Diniz, celsohad@insper.edu.br
+# - Lucas Hix, lucash@al.insper.edu.br
+# - Celso Diniz, celsohad@al.insper.edu.br
+# - Henrique Feola, henriquegf1@al.insper.edu.br
 
 import random
 import Data
 
-#Data.Introdução() = Lista de string contendo a introdução
-for string in Data.Introdução():
-    print(string, end = "")
+#Carrega as configurações
+Data.load()
+
+#Data.Introdução = Lista de string contendo a introdução
+for string in Data.Introdução:
+    print(string)
     
 print()
 
 #Dicionario dos Cenarios
-cenarios = Data.Cenarios()
+cenarios = Data.Cenarios
 
 if len(cenarios) == 0:
-    print("ERRO FATAL!! NÃO FOI POSSÍVEL CARREGAR OS CENARIOS!! Revise o arquivo Cenarios.json")
+    print("ERRO FATAL!! NÃO FOI POSSÍVEL CARREGAR OS CENARIOS!! Revise os Cenarios")
 
 else:
     #Seleciona o primeiro cenario do dicionario
@@ -27,16 +31,16 @@ else:
     
     while True:
         if nome_cenario_atual not in cenarios:
-            print("ERRO!! NÃO FOI POSSÍVEL CARREGAR O CENARIO: " + nome_cenario_atual + " ! Revise o arquivo Cenarios.json")
+            print("ERRO!! NÃO FOI POSSÍVEL CARREGAR O CENARIO: " + nome_cenario_atual + " ! Revise os Cenarios")
             break
-
+        
         cenario_atual = cenarios[nome_cenario_atual]
         
         #Teleporte
         
-        if Data.getTeleportChance() >= random.random() and not FoiTeleportado:
-            for string in Data.getTeleportText():
-                print(string, end = "")
+        if Data.Chance_de_Teleporte >= random.random() and not FoiTeleportado:
+            for string in Data.Texto_do_Teleporte:
+                print(string)
 
             print()
             nome_cenario_atual = random.choice(tuple(cenarios.keys()))
@@ -80,5 +84,5 @@ else:
                 nome_cenario_atual = escolha
         
         else:
-            print("ERRO!! NÃO FOI POSSÍVEL CARREGAR AS OPÇÕES DO CENARIO: " + nome_cenario_atual + " ! Revise o arquivo Cenarios.json")
+            print("ERRO!! NÃO FOI POSSÍVEL CARREGAR AS OPÇÕES DO CENARIO: " + nome_cenario_atual + " ! Revise os Cenarios")
             break
