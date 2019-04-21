@@ -7,6 +7,10 @@
 
 import random
 import Data
+#-------------------------
+#import monstros
+#import insper_monster 
+#-------------------------
 
 #Carrega as configurações
 Data.load()
@@ -48,6 +52,7 @@ else:
             continue
         
         FoiTeleportado = False
+        
         #Jogo tradicional com verificações de existencia
         
         if "Titulo" in cenario_atual.keys():

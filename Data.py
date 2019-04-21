@@ -1,6 +1,10 @@
 # EP 2019-1: Pega os dados do arquivo Config.yml
 
 from YamlFile import YamlFile
+#----------------------------- funcao e arquivo (A decidir)
+#import monstros
+#import insper_monster
+#-----------------------------
 
 File = YamlFile("Config.yml")
 
@@ -9,7 +13,7 @@ Texto_do_Teleporte = []
 Chance_de_Teleporte = -1
 Cenarios = {}
 
-def load():
+def loadData():
     global File
     global Introdução
     global Texto_do_Teleporte
@@ -28,7 +32,7 @@ def load():
         
     Introdução = File.getList("Introdução", default_value=Lista)
     
-    Chance_de_Teleporte = File.getFloat("Teleporte.Chance", default_value=0.5)
+    Chance_de_Teleporte = File.getFloat("Teleporte.Chance", default_value=0.05)
     
     Lista = []
     
