@@ -3,9 +3,15 @@
 # Alunos: 
 # - aluno A: Lucas Hix, lucash@insper.edu.br
 # - aluno B: Celso Diniz, celsohad@insper.edu.br
+# - aluno C: Henrique feola, henriquegf1@al.insper.edu.br
+
 
 import random
 import Data
+#----------------------------- 
+#import monstros
+#import insper_monster
+#----------------------------- 
 
 #Data.Introdução() = Lista de string contendo a introdução
 for string in Data.Introdução():
