@@ -44,19 +44,3 @@ Monstros = {
         }
     }
 }
-
-monstro = input('teste, escolha um monstro: ')
-print(Monstros[monstro]['Nome'])
-
-descricao = input('deseja descricao do monstro(sim/nao)? ')
-if descricao == str('sim'):
-	print(Monstros[monstro]['Descrição'])
-if descricao == str('nao'):
-	print('ok')
-opcoes = input('Opcoes de ataque(s/n)? ')
-if opcoes == str('sim'):
-	print(Monstros[monstro]['Opções'])
-
-else:
-	print('ok')
-
