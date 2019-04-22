@@ -10,10 +10,11 @@ Introdução:
 Teleporte:
   Chance: '0.05'
   Texto:
-  - '------------------'
-  - Ops... você acabou de entrar num portal...
+  - '------------------------------------------------------------------------------'
+  - '                                  !!CUIDADO!!                                 '
   - Onde estou??
-  - '------------------'
+  - Eu bem que avisei você entrou num portal invisível e foi para em outro lugar!!
+  - '------------------------------------------------------------------------------'
 Cenarios:
   Inicio:
     Titulo: Saguão do perigo
@@ -67,9 +68,17 @@ Cenarios:
       Predio Novo: Voltar para a entrada do prédio novo decendo de elevador
       Primeiro Andar: Pegar o elevador para o primeiro andar
       Segundo Andar: Descer de escada para o segundo andar
-      Fab Lap: Ir para o Fab Lap
-  Fab Lap:
-    Titulo: Fab Lap
-    Descrição: Você entrou no Fab Lap
+      FabLab: Ir para o FabLab
+  FabLab:
+    Titulo: FabLab
+    Descrição: Você entrou no FabLab
     Opções:
       Terceiro Andar: Voltar para o terceiro andar
+  Sala da Vítoria:
+    Titulo: Sala da Vítoria
+    Descrição: 'Parabéns você foi teleportado para a Sala da Vítoria!!
+
+      Você conseguio o adiamento da EP!!
+
+      GAME OVER!!'
+    Opções: {}

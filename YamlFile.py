@@ -12,7 +12,7 @@ class YamlFile:
 
 	def __init__(self, FilePath):
 		#Verefica a versâo do PyYAML se é igual ou superior a 5.1
-		if float(yaml.__version__) < 5.1:
+		if re.search("^\d+(.\d+)?$", yaml.__version__) and float(yaml.__version__) < 5.1:
 			raise ImportError("ERRO! Não Foi possível achar o modulo PyYAML 5.1 ou superior")
 		#Verefica se FilePath é uma string
 		elif type(FilePath) != str:
@@ -205,8 +205,8 @@ class YamlFile:
 		else:
 			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser um Booleano!")
 
-	#Pega uma Lista dentro dos dados
-	def getList(self, path, default_value=None):
+	#Pega uma Lista de Strings dentro dos dados
+	def getStringList(self, path, default_value=None):
 		if type(path) == str and len(path) != 0 and (type(default_value) == list or default_value == None):
 			tree = path.split(".")
 
@@ -214,6 +214,75 @@ class YamlFile:
 
 			if type(result) == list:
 				return result
+			elif default_value != None:
+				self._set_(path, default_value)
+				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma Lista!")
+
+	#Pega uma Lista de Floats dentro dos dados
+	def getFloatList(self, path, default_value=None):
+		if type(path) == str and len(path) != 0 and (type(default_value) == list or default_value == None):
+			tree = path.split(".")
+
+			result = self.process_get(tree, self.data, default_value)
+
+			if type(result) == list:
+				lista = []
+
+				#Transformando Strings em Floats
+				for string in result:
+					if re.search("^-?\d+(.\d+)?$", string):
+						lista.append(float(string))
+					else:
+						lista.append(0.0)
+				return lista
+
+			elif default_value != None:
+				self._set_(path, default_value)
+				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma Lista!")
+
+	#Pega uma Lista de Inteiros dentro dos dados
+	def getIntList(self, path, default_value=None):
+		if type(path) == str and len(path) != 0 and (type(default_value) == list or default_value == None):
+			tree = path.split(".")
+
+			result = self.process_get(tree, self.data, default_value)
+
+			if type(result) == list:
+				lista = []
+
+				#Transformando Strings em Inteiros
+				for string in result:
+					if re.search("^-?\d+$", string):
+						lista.append(int(string))
+					else:
+						lista.append(0)
+				return lista
+
+			elif default_value != None:
+				self._set_(path, default_value)
+				return default_value
+		else:
+			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma Lista!")
+
+	#Pega uma Lista de Booleanos dentro dos dados
+	def getBooleanList(self, path, default_value=None):
+		if type(path) == str and len(path) != 0 and (type(default_value) == list or default_value == None):
+			tree = path.split(".")
+
+			result = self.process_get(tree, self.data, default_value)
+
+			if type(result) == list:
+				lista = []
+
+				#Transformando Strings em Booleanos
+				for string in result:
+					lista.append(string.lower() == "true")
+				return lista
+
 			elif default_value != None:
 				self._set_(path, default_value)
 				return default_value

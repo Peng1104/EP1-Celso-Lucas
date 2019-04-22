@@ -6,54 +6,55 @@
 # - Henrique Feola, henriquegf1@al.insper.edu.br
 
 import random
-import Data
+import Defaults
+from YamlFile import YamlFile
 #-------------------------
 #import monstros
 #import insper_monster 
 #-------------------------
 
-#Carrega as configurações
-Data.load()
+#Arquivo contendo todos as configurações do jogo
+arquivo = YamlFile("Config.yml")
 
-#Data.Introdução = Lista de string contendo a introdução
-for string in Data.Introdução:
+for string in arquivo.getStringList("Introdução", default_value=Defaults.Introdução):
     print(string)
     
 print()
 
 #Dicionario dos Cenarios
-cenarios = Data.Cenarios
+Cenarios = arquivo.getDic("Cenarios", default_value=Defaults.Cenarios)
 
-if len(cenarios) == 0:
+if len(Cenarios) == 0:
     print("ERRO FATAL!! NÃO FOI POSSÍVEL CARREGAR OS CENARIOS!! Revise os Cenarios")
 
 else:
     #Seleciona o primeiro cenario do dicionario
-    nome_cenario_atual = next(iter(cenarios))
+    nome_cenario_atual = next(iter(Cenarios))
     
+    #FoiTeleportado garante a não repetição do teleporte (continuar jogo)
     FoiTeleportado = False
     
     while True:
-        if nome_cenario_atual not in cenarios:
+        if nome_cenario_atual not in Cenarios:
             print("ERRO!! NÃO FOI POSSÍVEL CARREGAR O CENARIO: " + nome_cenario_atual + " ! Revise os Cenarios")
             break
         
-        cenario_atual = cenarios[nome_cenario_atual]
+        cenario_atual = Cenarios[nome_cenario_atual]
         
-        #Teleporte
+        #Teleporte Aleatorio
         
-        if Data.Chance_de_Teleporte >= random.random() and not FoiTeleportado:
-            for string in Data.Texto_do_Teleporte:
+        if arquivo.getFloat("Teleporte.Chance", default_value=Defaults.Chance_de_Teleporte) >= random.random() and not FoiTeleportado:
+            for string in arquivo.getStringList("Teleporte.Texto", default_value=Defaults.Texto_do_Teleporte):
                 print(string)
 
             print()
-            nome_cenario_atual = random.choice(tuple(cenarios.keys()))
+            nome_cenario_atual = random.choice(tuple(Cenarios.keys()))
             FoiTeleportado = True
             continue
         
         FoiTeleportado = False
         
-        #Jogo tradicional com verificações de existencia
+        #Jogo em si com verificações de existencia
         
         if "Titulo" in cenario_atual.keys():
             print(cenario_atual["Titulo"])
@@ -91,3 +92,6 @@ else:
         else:
             print("ERRO!! NÃO FOI POSSÍVEL CARREGAR AS OPÇÕES DO CENARIO: " + nome_cenario_atual + " ! Revise os Cenarios")
             break
+
+#Salva o arquivo
+arquivo.save()
