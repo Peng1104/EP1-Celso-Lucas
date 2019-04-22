@@ -54,6 +54,10 @@ else:
         
         FoiTeleportado = False
         
+        #Combate
+        
+        if 
+        
         #Jogo em si com verificações de existencia
         
         if "Titulo" in cenario_atual.keys():
