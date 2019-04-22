@@ -66,8 +66,6 @@ else:
             opções = cenario_atual["Opções"]
             
             if len(opções) == 0:
-                print("Acabaram-se suas opções! Mwo mwo mwooooo...")
-                print("Você morreu!")
                 break
             else:
                 print("O que você fara a seguir?\n")

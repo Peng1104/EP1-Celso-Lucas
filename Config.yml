@@ -18,30 +18,36 @@ Teleporte:
 Cenarios:
   Inicio:
     Titulo: Saguão do perigo
-    Descrição: Você está no saguão de entrada do Insper
+    Descrição:
+    - Você está no saguão de entrada do Insper
     Opções:
       Andar do Professor: Pegar o elevador para ir ao andar do professor
       Biblioteca: Ir para a biblioteca
       Predio Novo: Ir para a entrada do prédio novo
   Andar do Professor:
     Titulo: Andar do desespero
-    Descrição: Você chegou no andar da sala do seu professor
+    Descrição:
+    - Você chegou no andar da sala do seu professor
     Opções:
       Inicio: Tomar o elevador para voltar ao saguão de entrada
       Professor: Ir falar com o professor
   Professor:
     Titulo: O monstro do Python
-    Descrição: Você foi pedir para o professor adiar o EP. O professor revelou que
-      é um monstro disfarçado e devorou sua alma.
+    Descrição:
+    - Você foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e devorou sua alma.
+    - Acabaram-se suas opções! Mwo mwo mwooooo...
+    - Você morreu!
     Opções: {}
   Biblioteca:
     Titulo: Caverna da tranquilidade
-    Descrição: Você está na biblioteca
+    Descrição:
+    - Você está na biblioteca
     Opções:
       Inicio: Voltar para o saguão de entrada
   Predio Novo:
     Titulo: Prédio Novo
-    Descrição: Você crusou a rua e entrou no prédio novo
+    Descrição:
+    - Você crusou a rua e entrou no prédio novo
     Opções:
       Inicio: Voltar para o saguão de entrada do Insper
       Primeiro Andar: Subir de escada para o primeiro andar
