@@ -1,51 +1,62 @@
-M = {
-
-
-    'Inicio': { 'Seguranca' : 10 , 'Sem carteirinha' : 10 , 'Professor' : 100 , 'Limpeza' : 100 , 'Novo aluno' : '100' },
-    'Andar do Professor': { 'Professor' : 100 , 'Sem computador' : 100 , 'Nao fez o EP' : 100 , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Professor': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Biblioteca': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Predio Novo': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Primeiro Andar': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Segundo Andar': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Terceiro Andar': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-    'Fab Lap': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
+Monstros = {
+    "Veterano folgado": {
+        "Nome" : "Veterano folgado",
+        "Descrição" : "Você esbarrou em um veterano sem querer, e, só porque ele é da atlética, ele decidiu folgar com você",
+        "Opções" : {
+                "Sair correndo" : "Você se sentiu intimidado e decidiu correr",
+                "Folgar de volta" : "Você lembrou que é um insper boy e resolveu meter a marra",
+                "Socar ele" : "Não recomendado, mas quem não curte uma trocação franca?"
+        }
+    },
+    "Raposa Pistola": {
+        "Nome" : "Raposa Pistola",
+        "Descrição" : "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
+        "Opções" : {
+                "Disfarçar" : "por mais incomodado que você esteja é melhor só deixar pra la",
+                "Dar uma piscadinha" : "Mascote da faculdade, poxa!",
+                "Socar ele" : "Não recomendado, mas quem não curte uma trocação franca?"
+        }
+    },
+    "Professor Atrasado": {
+        "Nome" : "Professor Atrasado",
+        "Descrição" : "Nossa! Pra que essa pressa toda, jogou café em você",
+        "Opções" : {
+                "Tirar dúvida estupida" : "Pra quem não tem tempo deve ser lindo responder uma pergunta idiota ",
+                "segurar o elevador pro amigo no banheiro" : "Qual foi? Até você ficaria bravo",
+                "Socar ele" : "Não recomendado, mas quem não curte uma trocação franca?"
+        }
+    },
+     "Henrique Feola": {
+        "Nome" : "Henrique Feola",
+        "Descrição" : "O aluno mais chato da faculdade..",
+        "Opções" : {
+                "Socar ele" : "Você realmente acha que te dariamos mais opções? SOCA LOGO ELE",
+               
+        }
+    },
+    "Carrinho do Smash": {
+        "Nome" : "Carrinho do Smash",
+        "Descrição" : "Oh não! O novo Battle Bot do Insper foi infectado por um vírus da FGV e esta consumindo alunos indefesos ",
+        "Opções" : {
+                "Correr" : "Não é medo, é nojo do rival mesmo",
+                "Subir na mesa" : "Robos de batalha não sobem paredes",
+                "Socar ele" : "Não recomendado, mas quem não curte uma trocação franca?"
+        }
+    }
 }
 
+monstro = input('teste, escolha um monstro: ')
+print(Monstros[monstro]['Nome'])
 
-print('Escolha um cenario e um monstro: ')
+descricao = input('deseja descricao do monstro(sim/nao)? ')
+if descricao == str('sim'):
+	print(Monstros[monstro]['Descrição'])
+if descricao == str('nao'):
+	print('ok')
+opcoes = input('Opcoes de ataque(s/n)? ')
+if opcoes == str('sim'):
+	print(Monstros[monstro]['Opções'])
 
-cenario = input('Sala: ')
-monstro = input('Monstro: ')
+else:
+	print('ok')
 
-print(insper_monster[cenario][monstro])
-
-
-#-------------------------------------------- Funcao
-
-
-def insper_monster(a,b):
-
-	M = {
-
-	#'nome da sala': { 'monstro 1' : 'poder monstro 1' , 'monstro 2' : 'poder monstro 2' , 'monstro 3' : 'poder monstro 3' , 'monstro 4' : 'poder monstro 4' , 'monstro 5' : 'poder monstro 5' },
-
-	    'S1': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-	    'S2': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-	    'S3': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-	    'S3': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-	    'S4': { 'M1' : 'P1' , 'M2' : 'P2' , 'M3' : 'P3' , 'M4' : 'P4' , 'M5' : 'P5' },
-	}
-
-
-#	sala = input('Cenario: ')
-#	monstro = input('Monstro: ')
-
-	#return M[cenario][monstro]
-	return M[a][b]
-
-	
-cenario = input('Cenario: ')
-monstro = input('Monstro: ')
-
-print(insper_monster(cenario, monstro))
