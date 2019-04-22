@@ -56,6 +56,12 @@ else:
         
         #Combate
         
+        monstros = arquivo.getDict("Monstros", default_value=Defaults.Monstros)
+        
+        monstro = random.choice(tuple(monstros.keys()))
+        
+        
+        
         #Jogo em si com verificações de existencia
         
         if "Titulo" in cenario_atual.keys():
