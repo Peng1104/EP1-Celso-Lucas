@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 22 10:29:34 2019
-
-@author: lucas
-"""
-
 #Arquivo que guarda todas as variaveis originais do Jogo
 
 #Texto de Introdução do Jogo
