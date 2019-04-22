@@ -22,7 +22,7 @@ for string in arquivo.getStringList("Introdução", default_value=Defaults.Intro
 print()
 
 #Dicionario dos Cenarios
-Cenarios = arquivo.getDic("Cenarios", default_value=Defaults.Cenarios)
+Cenarios = arquivo.getDict("Cenarios", default_value=Defaults.Cenarios)
 
 if len(Cenarios) == 0:
     print("ERRO FATAL!! NÃO FOI POSSÍVEL CARREGAR OS CENARIOS!! Revise os Cenarios")
