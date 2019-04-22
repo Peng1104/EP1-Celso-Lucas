@@ -56,15 +56,14 @@ else:
         
         #Combate
         
-        if 
-        
         #Jogo em si com verificações de existencia
         
         if "Titulo" in cenario_atual.keys():
             print(cenario_atual["Titulo"])
             
-        if "Descrição" in cenario_atual.keys():
-            print(cenario_atual["Descrição"])
+        if "Descrição" in cenario_atual.keys() and type(cenario_atual["Descrição"]) == list:
+            for string in cenario_atual["Descrição"]:
+                print(string)
             
         if "Opções" in cenario_atual.keys():
             opções = cenario_atual["Opções"]

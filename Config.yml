@@ -34,7 +34,8 @@ Cenarios:
   Professor:
     Titulo: O monstro do Python
     Descrição:
-    - Você foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e devorou sua alma.
+    - Você foi pedir para o professor adiar o EP. O professor revelou que é um monstro
+      disfarçado e devorou sua alma.
     - Acabaram-se suas opções! Mwo mwo mwooooo...
     - Você morreu!
     Opções: {}
@@ -55,21 +56,24 @@ Cenarios:
       Terceiro Andar: Pegar o elevador para o terceiro andar
   Primeiro Andar:
     Titulo: Primeiro Andar
-    Descrição: Você chegou no primeiro andar do prédio novo
+    Descrição:
+    - Você chegou no primeiro andar do prédio novo
     Opções:
       Predio Novo: Voltar para a entrada do prédio novo decendo as escadas
       Segundo Andar: Subir de escada para o segundo andar
       Terceiro Andar: Pegar o elevador para o terceiro andar
   Segundo Andar:
     Titulo: Segundo Andar
-    Descrição: Você chegou no segundo andar do prédio novo
+    Descrição:
+    - Você chegou no segundo andar do prédio novo
     Opções:
       Predio Novo: Voltar para a entrada do prédio novo atravez do escorregador
       Primeiro Andar: Descer de escada para o primeiro andar
       Terceiro Andar: Subir de escada para o terceiro andar
   Terceiro Andar:
     Titulo: Terceiro Andar
-    Descrição: Você chegou no terceiro andar do prédio novo
+    Descrição:
+    - Você chegou no terceiro andar do prédio novo
     Opções:
       Predio Novo: Voltar para a entrada do prédio novo decendo de elevador
       Primeiro Andar: Pegar o elevador para o primeiro andar
@@ -77,14 +81,14 @@ Cenarios:
       FabLab: Ir para o FabLab
   FabLab:
     Titulo: FabLab
-    Descrição: Você entrou no FabLab
+    Descrição:
+    - Você entrou no FabLab
     Opções:
       Terceiro Andar: Voltar para o terceiro andar
   Sala da Vítoria:
     Titulo: Sala da Vítoria
-    Descrição: 'Parabéns você foi teleportado para a Sala da Vítoria!!
-
-      Você conseguio o adiamento da EP!!
-
-      GAME OVER!!'
+    Descrição:
+    - Parabéns você foi teleportado para a Sala da Vítoria!!
+    - Você conseguio o adiamento da EP!!
+    - GAME OVER!!
     Opções: {}
