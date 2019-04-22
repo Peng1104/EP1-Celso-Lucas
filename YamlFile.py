@@ -290,7 +290,7 @@ class YamlFile:
 			raise TypeError("Path precisa ser uma String com pelo menos 1 caractere e/ou default_value tem que ser uma Lista!")
 
 	#Pega um Dicionario dentro dos dados
-	def getDic(self, path, default_value=None):
+	def getDict(self, path, default_value=None):
 		if type(path) == str and len(path) != 0 and (type(default_value) == dict or default_value == None):
 			tree = path.split(".")
 
