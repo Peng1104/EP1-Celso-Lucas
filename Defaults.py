@@ -9,7 +9,7 @@ Introdução = {
     "Amanhã eu começo o EP. Mas isso não deu certo...",
     "É o dia de entregar o EP e você está muuuuito atrasado!",
     "Você está na entrada do Insper, e quer procurar o professor para pedir um adiamento do EP (boa sorte...)"
-}
+ }
 
 #Chance de ser teleportado ao entrar em um cenario para outro cenraio aleatorio
 Chance_de_Teleporte = 0.25
@@ -146,9 +146,9 @@ Monstros = {
     },
     "Raposa Pistola": {
         "Nome" : "Raposa Pistola",
-        "Descrição" : [
+        "Descrição" : {
                 "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
-         },
+        },
         "Vida" : "80",
         "Ataque Padrão": "4",
         "Opções" : {
