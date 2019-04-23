@@ -12,8 +12,8 @@ from YamlFile import YamlFile
 #Arquivo contendo todos as configurações do jogo
 arquivo = YamlFile("Config.yml")
 
-for string in arquivo.getStringList("Introdução", default_value=Defaults.Introdução):
-    print(string)
+#for string in arquivo.getStringList("Introdução", default_value=Defaults.Introdução):
+#    print(string)
     
 print()
 
