@@ -1,7 +1,7 @@
 #Arquivo que guarda todas as variaveis originais do Jogo
 
 #Texto de Introdução do Jogo
-Introdução = [
+Introdução = {
     "Na hora do sufoco!",
     "------------------",
     "",
@@ -9,27 +9,27 @@ Introdução = [
     "Amanhã eu começo o EP. Mas isso não deu certo...",
     "É o dia de entregar o EP e você está muuuuito atrasado!",
     "Você está na entrada do Insper, e quer procurar o professor para pedir um adiamento do EP (boa sorte...)"
- ]
+}
 
 #Chance de ser teleportado ao entrar em um cenario para outro cenraio aleatorio
 Chance_de_Teleporte = 0.25
 
 #Texto para quando o Jogador é teleportado
-Texto_do_Teleporte = [
+Texto_do_Teleporte = {
     "------------------------------------------------------------------------------",
     "                                  !!CUIDADO!!                                 ",
     "Onde estou??",
     "Eu bem que avisei você entrou num portal invisível e foi para em outro lugar!!",
     "------------------------------------------------------------------------------"
-]
+}
 
 #Cenarios do Jogo
 Cenarios = {
     "Inicio": {
         "Titulo": "Saguão do perigo",
-        "Descrição": [
+        "Descrição": {
                 "Você está no saguão de entrada do Insper",
-        ],
+        },
         "Opções": {
             "Andar do Professor": "Pegar o elevador para ir ao andar do professor",
             "Biblioteca": "Ir para a biblioteca",
@@ -135,9 +135,9 @@ Monstros = {
         "Nome" : "Veterano folgado",
         "Vida" : "40",
         "Ataque Padrão": "1",
-        "Descrição" : [
+        "Descrição" : {
                 "Você esbarrou em um veterano sem querer, e, só porque ele é da atlética, ele decidiu folgar com você"
-        ],
+        },
         "Opções" : {
                 "Sair correndo" : "Você se sentiu intimidado e decidiu correr",
                 "Folgar de volta" : "Você lembrou que é um insper boy e resolveu meter a marra",
@@ -148,7 +148,7 @@ Monstros = {
         "Nome" : "Raposa Pistola",
         "Descrição" : [
                 "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
-        ],
+         },
         "Vida" : "80",
         "Ataque Padrão": "4",
         "Opções" : {
@@ -159,9 +159,9 @@ Monstros = {
     },
     "Professor Atrasado": {
         "Nome" : "Professor Atrasado",
-        "Descrição" : [
+        "Descrição" : {
                 "Nossa! Pra que essa pressa toda, jogou café em você",
-        ],
+        },
         "Vida" : "56",
         "Ataque Padrão": "10",
         "Opções" : {
@@ -172,9 +172,9 @@ Monstros = {
     },
      "Henrique Feola": {
         "Nome" : "Henrique Feola",
-        "Descrição" : [
+        "Descrição" : {
                 "O aluno mais chato da faculdade esta arrumando encrenca de novo",
-        ],
+        },
         "Vida" : "90",
         "Ataque Padrão": "9",
         "Opções" : {
@@ -184,9 +184,9 @@ Monstros = {
     },
     "Carrinho do Smash": {
         "Nome" : "Carrinho do Smash",
-        "Descrição" : [
+        "Descrição" : {
                 "Oh não! O novo Battle Bot do Insper foi infectado por um vírus da FGV e esta consumindo alunos indefesos ",
-        ],
+        },
         "Vida" : "10",
         "Ataque Padrão": "5",
         "Opções" : {
