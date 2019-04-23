@@ -27,7 +27,9 @@ Texto_do_Teleporte = [
 Cenarios = {
     "Inicio": {
         "Titulo": "Saguão do perigo",
-        "Descrição": "Você está no saguão de entrada do Insper",
+        "Descrição": [
+                "Você está no saguão de entrada do Insper",
+        ],
         "Opções": {
             "Andar do Professor": "Pegar o elevador para ir ao andar do professor",
             "Biblioteca": "Ir para a biblioteca",
@@ -113,13 +115,13 @@ Chance_de_Combate = 0.25
 Chace_de_Fuga = 0.20
 
 #Vida Inicial do Jogador
-Vida_Inicial = 300
+Vida_Inicial = 300.0
 
 #Recuperação de Vida
-Recuperação= 100
+Recuperação= 100.0
 
 #Dano Padrão do Jogador
-Dano_Padrão_Jogador = 10
+Dano_Padrão_Jogador = 10.0
 
 #Variavel de Sorte Jogador
 Sorte_Jogador = 0.05
@@ -133,7 +135,9 @@ Monstros = {
         "Nome" : "Veterano folgado",
         "Vida" : "40",
         "Ataque Padrão": "1",
-        "Descrição" : "Você esbarrou em um veterano sem querer, e, só porque ele é da atlética, ele decidiu folgar com você",
+        "Descrição" : [
+                "Você esbarrou em um veterano sem querer, e, só porque ele é da atlética, ele decidiu folgar com você"
+        ],
         "Opções" : {
                 "Sair correndo" : "Você se sentiu intimidado e decidiu correr",
                 "Folgar de volta" : "Você lembrou que é um insper boy e resolveu meter a marra",
@@ -142,7 +146,9 @@ Monstros = {
     },
     "Raposa Pistola": {
         "Nome" : "Raposa Pistola",
-        "Descrição" : "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
+        "Descrição" : [
+                "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
+        ],
         "Vida" : "80",
         "Ataque Padrão": "4",
         "Opções" : {
@@ -153,7 +159,9 @@ Monstros = {
     },
     "Professor Atrasado": {
         "Nome" : "Professor Atrasado",
-        "Descrição" : "Nossa! Pra que essa pressa toda, jogou café em você",
+        "Descrição" : [
+                "Nossa! Pra que essa pressa toda, jogou café em você",
+        ],
         "Vida" : "56",
         "Ataque Padrão": "10",
         "Opções" : {
@@ -164,7 +172,9 @@ Monstros = {
     },
      "Henrique Feola": {
         "Nome" : "Henrique Feola",
-        "Descrição" : "O aluno mais chato da faculdade esta arrumando encrenca de novo",
+        "Descrição" : [
+                "O aluno mais chato da faculdade esta arrumando encrenca de novo",
+        ],
         "Vida" : "90",
         "Ataque Padrão": "9",
         "Opções" : {
@@ -174,7 +184,9 @@ Monstros = {
     },
     "Carrinho do Smash": {
         "Nome" : "Carrinho do Smash",
-        "Descrição" : "Oh não! O novo Battle Bot do Insper foi infectado por um vírus da FGV e esta consumindo alunos indefesos ",
+        "Descrição" : [
+                "Oh não! O novo Battle Bot do Insper foi infectado por um vírus da FGV e esta consumindo alunos indefesos ",
+        ],
         "Vida" : "10",
         "Ataque Padrão": "5",
         "Opções" : {
