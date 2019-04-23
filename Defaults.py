@@ -12,7 +12,7 @@ Introdução = [
  ]
 
 #Chance de ser teleportado ao entrar em um cenario para outro cenraio aleatorio
-Chance_de_Teleporte = 0.05
+Chance_de_Teleporte = 0.25
 
 #Texto para quando o Jogador é teleportado
 Texto_do_Teleporte = [
@@ -106,10 +106,33 @@ Cenarios = {
     }
 }
 
+#Chance de Combate
+Chance_de_Combate = 0.25
+
+#Chance de Fuga do Comabte
+Chace_de_Fuga = 0.20
+
+#Vida Inicial do Jogador
+Vida_Inicial = 300
+
+#Recuperação de Vida
+Recuperação= 100
+
+#Dano Padrão do Jogador
+Dano_Padrão_Jogador = 10
+
+#Variavel de Sorte Jogador
+Sorte_Jogador = 0.05
+
+#Variavel de Sorte Monstro
+Sorte_Monstro = 0.02
+
 #Monstros do Jogo
 Monstros = {
     "Veterano folgado": {
         "Nome" : "Veterano folgado",
+        "Vida" : "40",
+        "Ataque Padrão": "1",
         "Descrição" : "Você esbarrou em um veterano sem querer, e, só porque ele é da atlética, ele decidiu folgar com você",
         "Opções" : {
                 "Sair correndo" : "Você se sentiu intimidado e decidiu correr",
@@ -120,6 +143,8 @@ Monstros = {
     "Raposa Pistola": {
         "Nome" : "Raposa Pistola",
         "Descrição" : "Você olhou estranho para a raposa loka e elha olhou estranho de volta",
+        "Vida" : "80",
+        "Ataque Padrão": "4",
         "Opções" : {
                 "Disfarçar" : "por mais incomodado que você esteja é melhor só deixar pra la",
                 "Dar uma piscadinha" : "Mascote da faculdade, poxa!",
@@ -129,6 +154,8 @@ Monstros = {
     "Professor Atrasado": {
         "Nome" : "Professor Atrasado",
         "Descrição" : "Nossa! Pra que essa pressa toda, jogou café em você",
+        "Vida" : "56",
+        "Ataque Padrão": "10",
         "Opções" : {
                 "Tirar dúvida estupida" : "Pra quem não tem tempo deve ser lindo responder uma pergunta idiota ",
                 "segurar o elevador pro amigo no banheiro" : "Qual foi? Até você ficaria bravo",
@@ -137,7 +164,9 @@ Monstros = {
     },
      "Henrique Feola": {
         "Nome" : "Henrique Feola",
-        "Descrição" : "O aluno mais chato da faculdade..",
+        "Descrição" : "O aluno mais chato da faculdade esta arrumando encrenca de novo",
+        "Vida" : "90",
+        "Ataque Padrão": "9",
         "Opções" : {
                 "Socar ele" : "Você realmente acha que te dariamos mais opções? SOCA LOGO ELE",
                
@@ -146,6 +175,8 @@ Monstros = {
     "Carrinho do Smash": {
         "Nome" : "Carrinho do Smash",
         "Descrição" : "Oh não! O novo Battle Bot do Insper foi infectado por um vírus da FGV e esta consumindo alunos indefesos ",
+        "Vida" : "10",
+        "Ataque Padrão": "5",
         "Opções" : {
                 "Correr" : "Não é medo, é nojo do rival mesmo",
                 "Subir na mesa" : "Robos de batalha não sobem paredes",
